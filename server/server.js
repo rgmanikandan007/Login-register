@@ -7,14 +7,18 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.post("login", (req, res) => {
+app.post("/login", (req, res) => {
     const {email, password} = req.body;
     StudentModel.findOne({email: email})
     .then(user => {
-        if(password === password){
-            res.json("Successfully Submitted")
+        if(user){
+            if(user.password === password){
+                res.json("Success")
+            } else {
+                res.json("Password is incorrect")
+            }
         } else {
-            res.json("Password is incorrect")
+            res.json("No record existed")
         }
     })
 })
