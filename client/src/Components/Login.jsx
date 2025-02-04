@@ -22,10 +22,10 @@ const Login = () => {
       <form>
         <label>Email :</label>
         <input type="email" placeholder="Enter Email" onChange={(e)=> setEmail(e.target.value)}/>
-        <span style={{color:"red"}}>{err}</span>
+        <span style={{color:"red", fontSize:"12px"}}>{err}</span>
         <label>Password :</label>
         <input type="password" placeholder="Enter Password" onChange={(e)=> setPassword(e.target.value)}/>
-        <span style={{color:"red"}}>{err}</span>
+        <span style={{color:"red", fontSize:"12px"}}>{err}</span>
         <p>Don't have an account? <Link to="/register">Sign-up</Link></p>
         <button className="login-btn" onClick={handleSubmit}>Submit</button>
       </form>
